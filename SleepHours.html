@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sleep Hours</title>
+</head>
+
+<body>
+    
+    <h1> Data Types and Conditions</h1>
+
+    <label>Region:  </label>
+    <input id="region" type="text">
+    <br />
+
+    <label>Daily Sleeping Hours</label>
+    <input id="sleepingHours" type="number">
+    <br />
+
+    <label>Age</label>
+    <input id="age" type="number">
+    <br /> 
+    <p></p>
+
+    <button type="button" onclick="clickFunction()">Submit</button>
+    <br />
+
+    <p id="msg1"></p>
+    <p id="msg2"></p>
+    <p id="msg3"></p>
+
+
+</body>
+
+<script>
+    
+    function sleepHours(sh,age,r){
+        
+        if (sh<8 && age>40) {
+            document.getElementById("msg1").innerHTML = "Sleep Deprived!";
+        }
+        else if (sh<6 && age<=40){
+            document.getElementById("msg1").innerHTML = "Sleep Deprived!";
+        }
+        else {
+            document.getElementById("msg1").innerHTML = "Healthy!";
+        }
+
+        if(r==="America") {
+            document.getElementById("msg2").innerHTML = "Note: 87% of highschool students in America are sleep deprived.";
+        }
+    }
+
+
+
+    function clickFunction(){
+        var region, sleepingHours, age2;
+        region = document.getElementById("region").value;
+        sleepingHours = document.getElementById("sleepingHours").value;
+        age2 = document.getElementById("age").value;
+
+        
+        sleepHours(sleepingHours, age2, region);
+
+        //document.getElementById("msg3").innerHTML = region;
+    }
+</script>
+
+</html>
