@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>GPA Calculator (v2.0)</h2>
+
+<form id="GPA">
+    <label>Physics Grade</label>            
+    <select name="physics">
+        <option value="A">A</option>
+        <option value="B">B</option>
+        <option value="C">C</option>
+        <option value="D">D</option>
+    </select>
+    <br>
+    <label>Maths Grade</label>            
+    <select name="maths">
+        <option value="A">A</option>
+        <option value="B">B</option>
+        <option value="C">C</option>
+        <option value="D">D</option>
+    </select>
+    <br>
+    <label>Chemistry Grade</label>            
+    <select name="chemistry">
+        <option value="A">A</option>
+        <option value="B">B</option>
+        <option value="C">C</option>
+        <option value="D">D</option>
+    </select>
+    <br><br>
+</form>
+<br>
+    
+<button type="button" onclick="myFunction()">Submit</button>
+
+<p id="msg1"></p>
+<p id="msg2"></p>
+<p id="msg3"></p>
+
+<script>
+
+    function calculateAverage(n1,n2,n3) {
+        return (  (n1 + n2 + n3) / 3  );
+    }
+
+    function convertAlphatoNumeric(GPA) {
+        if (GPA==="A") { return (100); }
+        if (GPA==="B") { return (85); }
+        if (GPA==="C") { return (70); }
+        if (GPA==="D") { return (60); }
+    }
+
+    function myGPA(a1,a2,a3) {
+        return ( (convertAlphatoNumeric(a1) + convertAlphatoNumeric(a2) + convertAlphatoNumeric(a3) )/3);
+    }
+
+
+    function myFunction() {
+
+        var LetterGrades;
+
+        LetterGrades = document.getElementById("GPA");
+
+        var texty = "";
+        var i;
+        for (i = 0; i < LetterGrades.length ;i++) {
+            texty += LetterGrades.elements[i].value + " ";
+        }
+//        document.getElementById("msg3").innerHTML = "(msg3)" + texty;
+
+        document.getElementById("msg1").innerHTML = "Average GPA is:";  
+
+        var AvgGPA;
+        AvgGPA = myGPA(LetterGrades.elements[0].value, LetterGrades.elements[1].value, LetterGrades.elements[2].value)
+        document.getElementById("msg2").innerHTML = AvgGPA;
+
+    }
+    
+
+</script>
+
+</body>
+</html> 
