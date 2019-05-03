@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Create A Web Form</title>
+</head>
+<body>
+    <h1>Create a web form</h1>
+
+    Name: <input type="text" id="name"> 
+    <br> <br>
+
+    Colour:
+    <form>
+        <input type="radio" name="color" id="green" value="green"> Green <br>
+	    <input type="radio" name="color" id="red" value="red"> Red <br>
+        <input type="radio" name="color" id="blue" value="blue"> Blue <br>
+    
+        <br>
+    
+    </form>
+    
+    <form id="options">
+        <input type="checkbox" name="food" id="food" value="food">Food<br>
+        <input type="checkbox" name="drink" id="drink" value="drink">Drink<br>
+        <input type="checkbox" name="movie" id="movie" value="movie">Movie<br>      
+    </form>
+    
+    <br>
+
+    <button type="button" onclick="clickFunc()">Submit</button>
+
+    <script>
+        function clickFunc(){
+
+            var selectedName = document.getElementById("name").value;
+            
+            if (selectedName === 'Hello') {
+                alert('Hey There!');
+            }
+            else if (selectedName ==='?') {
+                alert('Thank You!');
+            }
+            else if (selectedName === '') {
+                alert ('Name is required.');
+            }
+            
+            // write to console  the colour selected
+            var colorOptions = ['green', 'red', 'blue'];
+            for (var i in colorOptions) {
+                if (document.getElementById(colorOptions[i]).checked) {
+                    console.log(colorOptions[i]);
+                }
+            }
+        
+            // write to console checked items
+            var optionOptions = ['food', 'drink', 'movie'];
+            
+            for (var j in optionOptions) {
+                if (options.elements[optionOptions[j]].checked == true) {
+                    console.log(optionOptions[j]);
+                }   
+            }
+            
+        }
+    </script>
+
+</body>
+</html>
