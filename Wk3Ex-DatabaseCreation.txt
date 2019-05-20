@@ -1,0 +1,27 @@
+CREATE TABLE `robogarden`.`departments` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `department` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`));
+
+CREATE TABLE `robogarden`.`employees` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(45) NOT NULL,
+  `dept` INT NOT NULL REFERENCES departments(id),
+  PRIMARY KEY (`id`));
+
+insert into departments (department) VALUES ('HR');
+insert into departments (department) VALUES ('Accounting');
+insert into departments (department) VALUES ('Operations');
+insert into departments (department) VALUES ('Sales');
+insert into departments (department) VALUES ('Supply Chain');
+
+insert into employees (name,dept) VALUES ('Joe Brown',1);
+insert into employees (name,dept) VALUES ('Jane Doe',2);
+insert into employees (name,dept) VALUES ('Brian Hicks',3);
+insert into employees (name,dept) VALUES ('Daniel Tiger',4);
+insert into employees (name,dept) VALUES ('Peter Pan',5);
+insert into employees (name,dept) VALUES ('Peter Croft',2);
+insert into employees (name,dept) VALUES ('Alex Honnold',4);
+insert into employees (name,dept) VALUES ('Tom Green',3);
+insert into employees (name,dept) VALUES ('Bryan Wright',3);
+insert into employees (name,dept) VALUES ('Jennifer Grand',4);
