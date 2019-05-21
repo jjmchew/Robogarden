@@ -1,0 +1,36 @@
+<div style="text-align:center">
+  <h1>Display Data in Angular</h1>
+</div>
+
+<!----- name input textbox; use keyup event to check for empty text by keypress------------------->
+<div>Step 1-3:</div>
+Name: <input [(ngModel)]="name" (keyup)="checkName($event)"/>
+
+
+<hr style="margin-top: 30px; margin-bottom: 30px"/>
+
+<!-------write to console - used button to access function; could otherwise use always true condition on div ----->
+<div>Step 4:</div>
+<button (click)="exportConsole()">Write to Console</button>
+
+
+<hr style="margin-top: 30px; margin-bottom: 30px"/>
+
+<!----------displayed "Hey There" in a separate div, but could have used a conditional display---------------->
+<div>Step 5:</div>
+<p (click)="clickedText = 'Hey There!'">Click for a text</p>
+{{ clickedText }}
+
+
+<hr style="margin-top: 30px; margin-bottom: 30px"/>
+
+<!-----------2-way binding on name--------------------------------->
+<div>Step 6-7:</div>
+<div style="margin-top: 30px"> you typed the name: {{name}}</div>
+
+
+<hr style="margin-top: 30px; margin-bottom: 30px"/>
+
+<!-----------conditional assignment of CSS styles using "?" ----------------->
+<div>Step 8-10:</div>
+<h2 [className]="emptyInput ? 'redText' : 'normalText'">Good Morning</h2>
